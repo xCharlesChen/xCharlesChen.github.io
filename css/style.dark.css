@@ -477,7 +477,7 @@ code {
 html,
 body {
   color: #e0e0e0;
-  background-color: #171314;
+  background-color: $color-gray;
   font-size: 100%; /* add PX (or original value) as backup */
   font-size: 100%;
 }
@@ -486,7 +486,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #171314;
+  color: $color-gray;
   background-color: #1999ec;
   transition: all 0.25s;
   cursor: pointer;
@@ -621,11 +621,11 @@ h6 {
   color: #1999ec;
 }
 .post-item-wrapper .date-and-category .categories {
-  color: #171314;
+  color: $color-gray;
   background-color: #1999ec;
 }
 .post-item-wrapper .date-and-category .categories > a {
-  color: #171314;
+  color: $color-gray;
   background-color: #1999ec;
 }
 .post-item-wrapper .tags {
@@ -745,12 +745,12 @@ footer {
 }
 .pagination > li > a {
   color: #1999ec;
-  background-color: #171314;
+  background-color: $color-gray;
   border: 1px solid #1999ec;
   border-radius: 0.1875rem;
 }
 .pagination > li > a:hover {
-  color: #171314;
+  color: $color-gray;
   background-color: #1999ec;
   border: 1px solid #1999ec;
 }
