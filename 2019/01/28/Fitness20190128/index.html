@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Charles Chen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="热量计算以及饮食摄入">
+  <meta property="og:description" content="Charles Chen 的个人网站，记录编程（Javascript / Python / PHP），健身，机车等分享记录。">
+  <meta property="og:site_name" content="xCharlesChen">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="xCharlesChen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>xCharlesChen</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">热量计算以及饮食摄入</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Charles Chen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-01-28</span>
+            <span class="time">23:59:31</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/Fit-System/">Fit System</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Fitness/">#Fitness</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>基本的健身知识，包括热量计算和饮食摄入计划，健身三分练，七分靠饮食。<br><a id="more"></a></p>
+<h1 id="三大营养素"><a href="#三大营养素" class="headerlink" title="三大营养素"></a>三大营养素</h1><ul>
+<li><p>碳水  </p>
+<p>  直接为身体提供能量。增肌多吃，减脂少吃，靠脂肪来提供能量。减脂可以深入慢速吸收的复合型碳水（红薯、玉米、糙米、燕麦、白米饭），少吃精白面，拒绝糖果、饮料、果汁。</p>
+</li>
+<li><p>蛋白质  </p>
+<p>  合成肌肉，增肌原料，减脂能减少过量肌肉分解。</p>
+</li>
+<li><p>脂肪  </p>
+<p>  也是提供肌肉，但是不是直接，相对缓慢，要避免所有的垃圾脂肪。可摄入一定量的优质脂肪有（不饱和多元脂肪酸）：肉类、鸡蛋黄、坚果、橄榄油、水果（牛油果之类的）。</p>
+</li>
+</ul>
+<hr>
+<h1 id="热量计算公式"><a href="#热量计算公式" class="headerlink" title="热量计算公式"></a>热量计算公式</h1><blockquote>
+<p>单位参考:<br>weight(kg) height(cm) age(years old) time(minute) Q(cal,卡路里) </p>
+</blockquote>
+<p>男生日常消耗 <strong>(*就是乘法)</strong> ：</p>
+<blockquote>
+<p>Q1 = 66.5 + 13.75 * weight + 5.003 * height - 6.775 * age    </p>
+</blockquote>
+<p>女生日常消耗：  </p>
+<blockquote>
+<p>Q1 = 65.1 + 9.563 * weight + 1.85 * height - 4.676 * age</p>
+</blockquote>
+<p>运动消耗通式：  </p>
+<blockquote>
+<p>Q2 = 0.086 * weight * time</p>
+</blockquote>
+<p>增肌摄入  </p>
+<blockquote>
+<p>IMQ = Q1 + Q2 + 500</p>
+</blockquote>
+<p>减脂  </p>
+<blockquote>
+<p>DEQ = Q1 + Q2 - 500</p>
+</blockquote>
+<hr>
+<h1 id="计算你的特殊-Q-值"><a href="#计算你的特殊-Q-值" class="headerlink" title="计算你的特殊 Q 值"></a>计算你的特殊 Q 值</h1><p>以我为例，体重 73 kg,裸高 178 cm， 24岁，代入男生日常消耗公式计算 Q1：<br> Q1 = 66.5 + 13.75 * 73 + 5.003 * 178 - 6.775 * 24 = 1798.184 也就是 1800 卡。<br>Q2 = 0.086 * 73 * 90 = 565 cal<br>IMQ = 1800 + 565 + 500 = 2865 cal<br>DEQ = 1800 + 565 - 500 = 1865 cal  </p>
+<p>三大营养素摄入热量比例：<br>碳水：蛋白质：脂肪 = 3： 4 :  3<br>按增肌算<br>碳水： 2865 * 0.3 = 858.5 cal  -&gt;  214 g<br>蛋白质： 2865 * 0.4 = 1146 cal  -&gt;  286 g<br>脂肪： 2865 * 0.3 = 858.5 cal  -&gt;  95g  </p>
+<p>上面换算最终质量参考公式  </p>
+<blockquote>
+<p>1g 碳水提供 4 cal<br>1g 蛋白质提供 4 cal<br>1g 脂肪提供 9cal  </p>
+</blockquote>
+<p>按照上面换算结果也就是我要摄入 214g 的碳水，286g 的蛋白质以及 95g 的脂肪。摄入碳水、蛋白质、脂肪的可数都已经计算出来，你可以在手机上下载 <strong>薄荷app</strong> 来计算你所摄入的物质含有多少 g 碳水、蛋白质、脂肪。<br>举例：<br>碳水有紫薯、山药、糙米。<br>薄荷app 中食物估算 100g 的紫薯有 15g 碳水。<br>一个蛋白 3 g 蛋白质，整蛋 9 g 蛋白质。<br>100g 瘦肉有 20 g 蛋白质，高标准肉算的了。减脂不吃 猪肉、鸭肉、羊肉。好的肉：牛肉、鱼肉、虾肉、无皮鸡肉。<br>脂肪靠坚果摄入，买小包装那种每日一包，上面有写的很清楚的营养成分。  </p>
+<hr>
+<h1 id="减脂建议"><a href="#减脂建议" class="headerlink" title="减脂建议"></a>减脂建议</h1><p>减脂期间最好再早餐摄入大量碳水来提供你这一天需要的能量。如果你一天要吃三个红薯，建议早餐一个，练前练后一小时各一个。好让让碳水都消耗掉，不然如果你在办公室坐着的时候摄入大量碳水，都转换成<strong><em>肝糖原肌糖原甚至脂肪</em></strong>这种非期望产物了。意思就是尽量把大量碳水安排在早餐和你训练前后，为了让你消耗掉它。</p>
+<p>不管你是增肌还是减脂，训练后必须要吃东西。不然就徒劳辛苦了，让你的付出收益最大化。</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

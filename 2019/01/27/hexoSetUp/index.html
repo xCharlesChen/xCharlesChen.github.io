@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Charles Chen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Hexo 搭建个人博客">
+  <meta property="og:description" content="Charles Chen 的个人网站，记录编程（Javascript / Python / PHP），健身，机车等分享记录。">
+  <meta property="og:site_name" content="xCharlesChen">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="xCharlesChen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>xCharlesChen</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Hexo 搭建个人博客</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Charles Chen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-01-27</span>
+            <span class="time">23:59:31</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/Blog-System/">Blog System</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/hexo/">#hexo</a> <a class="tag" href="/tags/github/">#github</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>从零开始搭建你的个人网站！<br><a id="more"></a></p>
+<h1 id="1-购买域名"><a href="#1-购买域名" class="headerlink" title="1.购买域名"></a>1.购买域名</h1><blockquote>
+<p> <a href="https://dc.console.aliyun.com/" target="_blank" rel="noopener">阿里云链接</a>  </p>
+</blockquote>
+<p>阿里云注册账号购买即可。<br>如果你需要个性化自己的个人网站才需要购买。如果不需要请跳过第一步，你可以搭载在 github 上。<br>下面举例最终效果：</p>
+<p>个人<br><a href="https://xcharleschen.com/" target="_blank" rel="noopener">https://xcharleschen.com/</a></p>
+<p>github搭载<br><a href="https://xcharleschen.github.io/chengl.github.io/" target="_blank" rel="noopener">https://xcharleschen.github.io/chengl.github.io/</a></p>
+<hr>
+<h1 id="2-下载-git"><a href="#2-下载-git" class="headerlink" title="2.下载 git"></a>2.下载 git</h1><blockquote>
+<p><a href="https://git-scm.com/" target="_blank" rel="noopener">git 下载链接</a><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">git 操作指南</a><br><a href="https://github.com/settings/keys" target="_blank" rel="noopener">git ssh 设置</a></p>
+</blockquote>
+<p>下载完成后,需要连接到你的 git 仓库，详细参考 git 操作指南。<br>以下简述。<br>命令行输入以下命令:  </p>
+<pre><code>git config --global user.name NAME
+git config --global user.email EMAIL
+ssh-keygen -t rsa -C EMAIL
+</code></pre><p>NAME 是你的 github 账号， EMAIL 是你的注册 github 所使用邮箱。<br>第三行命令是用来生成 ssh key，生成的 id_rsa.pub 需要复制其内容到上面的 github ssh 设置链接中 new ssh。</p>
+<hr>
+<h1 id="3-下载-Node-js"><a href="#3-下载-Node-js" class="headerlink" title="3.下载 Node.js"></a>3.下载 Node.js</h1><blockquote>
+<p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node 下载链接</a>  </p>
+</blockquote>
+<p>1.下载安装后在命令行中输入以下命令进行版本验证 node 安装成功  </p>
+<pre><code>node -v
+</code></pre><p>我的命令行展示结果为：</p>
+<pre><code>v10.15.0
+</code></pre><p>2.国内因为某些不能说的原因导致安装东西很慢的，我们需要设置一个淘宝镜像为后面的所有 npm 加速。<br>设置 cnpm,以后你的所有 npm 操作都用 cnpm 代替 npm 关键词。  </p>
+<pre><code>npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre><p>例如你要 npm 某个包，直接用 cnpm 代替 npm：  </p>
+<pre><code>cnpm install 某个包名
+</code></pre><hr>
+<h1 id="4-建立-Hexo-项目"><a href="#4-建立-Hexo-项目" class="headerlink" title="4.建立 Hexo 项目"></a>4.建立 Hexo 项目</h1><p>1.安装 hexo :  </p>
+<pre><code>cnpm install -g hexo
+</code></pre><p>2.类似确认 node.js 的安装版本验证以下 hexo 是否正常安装： </p>
+<pre><code>hexo -v
+</code></pre><p>3.初始化一个 hexo 项目，你需要建立一个文件夹用来保存你的项目，最好按照 hexo 手册定义名字<br>为 <strong>你的github账号名.github.io</strong>,我的就叫 chengl.github.io，虽然我的 git 账号是 xCharlesChen。<br>在这个目录下右键选择 Git Bush Here,输入以下代码进行初始化并安装依赖:  </p>
+<pre><code>hexo init
+hexo install
+</code></pre><p>4.修改 _config.yml 配置如下，你需要以下面的代码为模板，改下 repo 参数(参数是你的 github 上<br>的仓库地址，仓库名最好也第二步中的文件夹名，拷贝过来加个 .git 结尾)，其他两个可以先别管。  </p>
+<pre><code>deploy:
+  type: git
+  repo: https://github.com/xCharlesChen/chengl.github.io.git
+  branch: master
+</code></pre><p>5.本地项目文件夹中右键选择 Git Bush Here,输入以下代码（第三步的命令行交互没关就接着用那个交互窗口）：  </p>
+<pre><code>hexo clean
+hexo generate
+hexo server
+</code></pre><p>本地预览： <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br>6.发布到网站：<br>部署插件安装</p>
+<pre><code>cnpm install hexo-deployer-git --save
+</code></pre><p>发布到网站  </p>
+<pre><code>hexo clean
+hexo generate
+hexo deploy
+</code></pre><hr>
+<h1 id="5-使用个人域名"><a href="#5-使用个人域名" class="headerlink" title="5.使用个人域名"></a>5.使用个人域名</h1><p>1.第四步中的 6.发布到网站只会挂载到 github 上面，如果你需要个性化，进入你的阿里云控制台，解析你的域名。解析设置：</p>
+<p>记录类型选择 CNAME；<br>主机记录这里可以不填，如果你加入 www,这样你以后访问个人网站需要在你购买的域名前加 www；<br>解析线路 默认；<br>记录值：你的仓库包名，也就是上面那个 repo 配置中的最后一段，例如我的： chengl.github.io;<br>TTL 默认；<br>确认保存。  </p>
+<p>2.在你的本地项目中的 /resource 下添加一个文件类型为所有文件的文件，在文件类输入你的个人域名，例如我的：xcharleschen.com<br>修改了需要发布，执行以下代码。 </p>
+<pre><code>hexo clean
+hexo generate
+hexo deploy
+</code></pre><hr>
+<h1 id="6-github-设置你的个性化地址"><a href="#6-github-设置你的个性化地址" class="headerlink" title="6.github 设置你的个性化地址"></a>6.github 设置你的个性化地址</h1><p>进入你的 hexo项目仓库中，进入 settings，往下拉，找到 custom domain 配置，输入你的域名，例如我的：<br>xcharleschen.com<br>保存。</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
