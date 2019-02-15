@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Charles Chen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Javascript Array 数组终止循环方式总结">
+  <meta property="og:description" content="Charles Chen 的个人网站，记录编程（Javascript / Python / PHP），健身，机车等分享记录。">
+  <meta property="og:site_name" content="xCharlesChen">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="xCharlesChen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>xCharlesChen</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/manCopy.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Javascript Array 数组终止循环方式总结</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/xCharlesChen">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/243404855@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Charles Chen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-02-15</span>
+            <span class="time">22:41:16</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/Javascript/">Javascript</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Javascript/">#Javascript</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>本文总结如何 Javascript的各种数组循环中断方式。<br><a id="more"></a></p>
+<h1 id="Javascript-数组-Array-循环方式有哪些？"><a href="#Javascript-数组-Array-循环方式有哪些？" class="headerlink" title="Javascript 数组 Array 循环方式有哪些？"></a>Javascript 数组 Array 循环方式有哪些？</h1><ul>
+<li><h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2></li>
+</ul>
+<p>使用：<code>break</code> <code>continue</code></p>
+<pre><code>let arr = [1, 2, 3]
+for (let index = 0; index &lt; arr.length; index++) {
+    if (arr[index] === 2) break
+    console.log(arr[index])
+}
+
+//  1 
+</code></pre><p>分析：index = 1, arr[1] = 2 条件成立，break <strong>抛锚</strong>停止整个循环。</p>
+<blockquote>
+<p>break : 抛锚 摔碎</p>
+</blockquote>
+<pre><code>let arr = [1, 2, 3]
+for (let index = 0; index &lt; arr.length; index++) {
+    if (arr[index] === 2) continue
+    console.log(arr[index])
+}
+//  1
+//  3
+</code></pre><p>分析：index = 1, arr[1] = 2 条件成立，continue 退出此次循环，<strong>继续</strong>下一个循环。   </p>
+<blockquote>
+<p>continue : 继续</p>
+</blockquote>
+<pre><code>for (let index = 0; index &lt; arr.length; index++) {
+    if (arr[index] === 2) return
+    console.log(arr[index])
+}
+//  Uncaught SyntaxError: Illegal return statement
+</code></pre><p>分析：无法使用 return 声明。</p>
+<hr>
+<ul>
+<li><h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2></li>
+</ul>
+<p>使用：<code>return</code></p>
+<pre><code>let arr = [1, 2, 3]
+arr.forEach(item =&gt; {
+    if (item === 1 ) return false
+    console.log(item)
+})
+// 2
+// 3
+
+arr.forEach(item =&gt; {
+    if (item === 2 ) return false
+    console.log(item)
+})
+// 1
+// 3
+
+arr.forEach(item =&gt; {
+    if (item === 1 ) return true
+    console.log(item)
+})
+// 2
+// 3
+
+arr.forEach(item =&gt; {
+    if (item === 2 ) return true
+    console.log(item)
+})
+// 1
+// 3
+</code></pre><p>分析：上面依次四个 <code>forEach</code> 的输出， <code>forEach</code> 是无法被打断的，很明显，这些 <code>return true</code> 或是 <code>return false</code> 操作起到的仅仅是一个 <code>continue</code> 的效果。条件成立后 <code>return</code> 停止了当前轮次的循环而已。</p>
+<hr>
+<ul>
+<li><h2 id="Array-map"><a href="#Array-map" class="headerlink" title="Array.map"></a>Array.map</h2></li>
+</ul>
+<p>使用：<code>return</code></p>
+<p>分析：和 forEach() 方法的区别就是它的每次循环都有返回值，并组成一个数组，不能使用 <code>break</code> <code>continue</code>,能使用 <code>return true(false)</code> 来停止当前轮次循环模拟一个 <code>continue</code> 的效果而已。</p>
+<hr>
+<ul>
+<li><h2 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h2></li>
+</ul>
+<p>使用：<code>break</code> <code>continue</code></p>
+<pre><code>let arr = [1, 2, 3]
+for (let index in arr) {
+    return index
+}
+//  VM505:2 Uncaught SyntaxError: Illegal return statement
+
+for (let index in arr) {
+    return ture
+}
+
+//  VM527:2 Uncaught SyntaxError: Illegal return statement
+
+for (let index in arr) {
+    if (index === 1) break
+    console.log(arr[index])
+}
+//  1
+//  2
+</code></pre><p>分析：<code>braek</code> <code>continue</code> 均无效，<code>return</code> 甚至会报错。无法停止或筛选。</p>
+<hr>
+<ul>
+<li><h2 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h2></li>
+</ul>
+<p>使用：<code>break</code> <code>continue</code></p>
+<pre><code>let arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+for (let item of arr) {
+    if (item === &apos;b&apos;) break
+    console.log(item)
+}
+//  a
+
+for (let item of arr) {
+    if (item === &apos;b&apos;) continue
+    console.log(item)
+}
+//  a
+//  c
+
+for (let item of arr) {
+    if (item === &apos;b&apos;) return false
+    console.log(item)
+}
+//  Uncaught SyntaxError: Illegal return statement
+</code></pre><p>分析：可以类似 <code>for</code> 使用 <code>break</code> <code>continue</code> ，效果一样。但是无法使用 <code>return</code></p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>先只做一个表格归纳：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th><code>retrun</code></th>
+<th><code>break</code> <code>continue</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>for</code></td>
+<td>报错</td>
+<td>正常</td>
+</tr>
+<tr>
+<td><code>forEach</code></td>
+<td><code>continue</code> 效果</td>
+<td>无效</td>
+</tr>
+<tr>
+<td><code>Array.map</code></td>
+<td><code>continue</code> 效果</td>
+<td>无效</td>
+</tr>
+<tr>
+<td><code>for in</code></td>
+<td>报错</td>
+<td>无效</td>
+</tr>
+<tr>
+<td><code>for of</code></td>
+<td>报错</td>
+<td>正常</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
