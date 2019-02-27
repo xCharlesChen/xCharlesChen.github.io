@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Charles Chen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Javascript String 方法总结">
+  <meta property="og:description" content="Charles Chen 的个人网站，记录编程（Javascript / Python / PHP），健身，机车等分享记录。">
+  <meta property="og:site_name" content="Charles Chen">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="Charles Chen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Charles Chen</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/manCopy.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Javascript String 方法总结</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/xCharlesChen">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/243404855@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Charles Chen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-02-24</span>
+            <span class="time">09:15:51</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/Javascript/">Javascript</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Javascript/">#Javascript</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>Javascript String 字符串相关方法归纳。<br><a id="more"></a></p>
+<p>注意，本文中没有声明 str 的地方，都是默认为：</p>
+<pre><code>let str = &apos;Hello, Buddy!&apos;
+</code></pre><ul>
+<li><h2 id="指定脚标字符方法"><a href="#指定脚标字符方法" class="headerlink" title="指定脚标字符方法"></a>指定脚标字符方法</h2></li>
+</ul>
+<ol>
+<li><p>charAt(index) </p>
+<p> 参数：</p>
+<p> <code>index</code>: 以 0 为起始位的 Number 类型脚标。 </p>
+<p> 作用：</p>
+<p> 返回该脚标的字符所组成的字符串。</p>
+</li>
+<li><p>charCodeAt(index)</p>
+<p> 参数：</p>
+<p> <code>index</code>: 以 0 为起始位的 Number 类型脚标。</p>
+<p> 作用：</p>
+<p> 返回该脚标的字符的字符编码。</p>
+<pre><code>let str = &apos;Hello, Buddy!&apos;;
+console.log(str.charAt(7));
+//  B
+console.log(str.charCodeAt(7));
+//  66
+</code></pre></li>
+</ol>
+<ul>
+<li><h2 id="字符串操作方法"><a href="#字符串操作方法" class="headerlink" title="字符串操作方法"></a>字符串操作方法</h2></li>
+</ul>
+<ol>
+<li><p>concat(str1, str2)</p>
+<p> 参数：</p>
+<p> <code>str1,str2...</code>一个或者多个字符串。</p>
+<p> 作用： </p>
+<p> 该函数返回一个被创建的新的字符串,不影响原字符串。</p>
+<pre><code>let str = &apos;Hello, Buddy!&apos;;
+//  &quot;Hello, Buddy!&quot;
+str.concat(&apos;111&apos;, &apos;222&apos;)
+//  &quot;Hello, Buddy!111222&quot;
+str
+//  &quot;Hello, Buddy!&quot;
+</code></pre></li>
+<li><p>substring(firstIndex, lastIndex)/slice(firstIndex, lastIndex)</p>
+<p> 参数：</p>
+<p> <code>firstIndex</code>: 新字符串起始位置。 </p>
+<p> <code>lastIndex</code>: 新字符串结束位置, <strong>但是不包含该脚标的字符</strong>。如果该值小于 <code>firstIndex</code> ,则<strong>反向截取</strong>。</p>
+<p> 作用：</p>
+<p> 该函数返回一个被创建的新的字符串,不影响原字符串。</p>
+<pre><code>str.substring(2, 6)
+//  &quot;llo,&quot;
+str
+//  &quot;Hello, Buddy!&quot;
+</code></pre></li>
+</ol>
+<ol start="3">
+<li><p>substr(firstIndex, number)</p>
+<p> 参数：</p>
+<p> <code>firstIndex</code>: 新字符串起始位置。 </p>
+<p> <code>number</code>: 新字符串的长度。</p>
+<p> 作用：</p>
+<p> 该函数返回一个被创建的长度为 <code>number</code> 新的字符串,不影响原字符串。</p>
+<pre><code>str.substr(2, 6);
+//  &quot;llo, B&quot;
+str
+//  &quot;Hello, Buddy!&quot;
+</code></pre></li>
+</ol>
+<ul>
+<li><h2 id="字符位置查询方法"><a href="#字符位置查询方法" class="headerlink" title="字符位置查询方法"></a>字符位置查询方法</h2></li>
+</ul>
+<ol>
+<li>indexOf(str)</li>
+<li><p>lastIndexOf(str)</p>
+<p> 参数：</p>
+<p> <code>str</code>： 目标查找字符段。</p>
+<p> 作用：</p>
+<p> <code>indexOf()</code> 从 0 开始查询，<code>lastIndexOf()</code> 从字符串末尾开始查询，返回匹配字符串的脚标位置。</p>
+<pre><code>str.indexOf(&apos;d&apos;);
+9
+str.lastIndexOf(&apos;d&apos;);
+10
+</code></pre></li>
+</ol>
+<ul>
+<li><h2 id="字符串大小写切换"><a href="#字符串大小写切换" class="headerlink" title="字符串大小写切换"></a>字符串大小写切换</h2></li>
+</ul>
+<ol>
+<li>toLowerCase()</li>
+<li>toLocaleLowerCase()</li>
+<li>toUpperCase()</li>
+<li><p>toLocaleUpperCase()</p>
+<pre><code>str.toLowerCase()
+//  &quot;hello, buddy!&quot;
+str.toLocaleLowerCase()
+//  &quot;hello, buddy!&quot;
+str.toUpperCase()
+//  &quot;HELLO, BUDDY!&quot;
+str.toLocaleUpperCase()
+//  &quot;HELLO, BUDDY!&quot;
+</code></pre></li>
+</ol>
+<ul>
+<li><h2 id="ES6-新增"><a href="#ES6-新增" class="headerlink" title="ES6 新增"></a>ES6 新增</h2></li>
+</ul>
+<ol>
+<li><p>repeat(times)</p>
+<p> 参数：</p>
+<p> <code>times</code>: number 类型，重复的次数。</p>
+<p> 作用：</p>
+<p> 该函数返回一个被创建的重复拼接次数为 <code>times</code> 新的字符串,不影响原字符串。</p>
+<pre><code>str.repeat(2)
+//  &quot;Hello, Buddy!Hello, Buddy!&quot;
+</code></pre></li>
+<li><p>includes(str)</p>
+<p> 参数：</p>
+<p> <code>str</code>: 目标查询字符串。</p>
+<p> 作用：</p>
+<p> 字符串是否包含目标字符串，返回布尔值。</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>startWith(str)</p>
+<p> 参数：</p>
+<p> <code>str</code>: 目标查询字符串。</p>
+<p> 作用：</p>
+<p> 字符串是否以目标字符串为起始，返回布尔值。</p>
+</li>
+<li><p>endsWith()</p>
+<p> 参数：</p>
+<p> <code>str</code>: 目标查询字符串。</p>
+<p> 作用：</p>
+<p> 字符串是否以目标字符串结束，返回布尔值。</p>
+</li>
+</ol>
+<ul>
+<li><h2 id="去空格"><a href="#去空格" class="headerlink" title="去空格"></a>去空格</h2></li>
+</ul>
+<ol>
+<li><p>trim()</p>
+<p> 参数：</p>
+<p> 无参数。</p>
+<p> 作用：</p>
+<p> 去掉字符串左边的空格。</p>
+<pre><code>let str2 = &apos;    2  3  abc &apos;;
+console.log(str2);
+console.log(str2.trim());
+console.log(str2);
+//    2  3  abc 
+//2  3  abc
+//    2  3  abc 
+</code></pre><p> 扩展：</p>
+<p> 下面用正则表达式扩展各种去空格方法。</p>
+<pre><code>/*
+方法 trim 去掉空白
+参数 [str]    要处理的字符串        
+参数 [type]   
+    类型：
+        l 去除左边的空白    
+        r去除右边空白    
+        b去掉两边的空白        
+        a去除所有空白
+*/
+function trim (str,type) {
+    var type=type||&quot;b&quot;;
+    if(type==&quot;b&quot;){
+        return str.replace(/^\s*|\s*$/g,&quot;&quot;);
+    }else if(type==&quot;l&quot;){
+        return str.replace(/^\s*/g,&quot;&quot;);
+    }else if(type==&quot;r&quot;){
+        return str.replace(/\s*$/g,&quot;&quot;);
+    }else if(type==&quot;a&quot;){
+        return str.replace(/\s*/g,&quot;&quot;);
+    }
+}
+</code></pre></li>
+</ol>
+<ul>
+<li><h2 id="字符串的模式匹配"><a href="#字符串的模式匹配" class="headerlink" title="字符串的模式匹配"></a>字符串的模式匹配</h2></li>
+</ul>
+<ol>
+<li><p>match(pattern)</p>
+<p> 参数：</p>
+<p> <code>pattern</code>: 一个正则表达式或 <code>RegExp</code> 对象。</p>
+<p> 作用：</p>
+<p> 返回一的数组，里面包含被插叙到的字段。</p>
+<pre><code>let str = &apos;cat, hat, bat&apos;;
+let pattern = /.at/;
+let pattern2 = /.at/g;
+let matches = str.match(pattern);
+console.log(matches);
+//  如果正则不是全局检测，则查找单个，并且返回单个的详细信息。
+//  [&quot;cat&quot;, index: 0, input: &quot;cat, hat, bat&quot;, groups: undefined]
+let matches2 = str.match(pattern2);
+console.log(matches2);
+//  [&quot;cat&quot;, &quot;hat&quot;, &quot;bat&quot;]
+</code></pre></li>
+</ol>
+<ol start="2">
+<li><p>search(pattern)</p>
+<p> 参数：</p>
+<p> <code>pattern</code>: 一个正则表达式或 <code>RegExp</code> 对象。</p>
+<p> 作用：</p>
+<p> 返回字符串中第一个匹配项的索引，如果没有找到，则返回-1</p>
+<pre><code>let str = &apos;cat, hat, bat&apos;;
+str.search(&apos;hat&apos;);
+//  5
+str.search(&apos;boss&apos;);
+//  -1
+</code></pre></li>
+</ol>
+<ol start="3">
+<li><p>replace(arguments[0], arguments[1])</p>
+<p> 参数：</p>
+<p> <code>arguments[0]</code>: 一个RegExp对象或者一个字符串。</p>
+<p> <code>arguments[1]</code>: 一个字符串或一个函数。</p>
+<p> 作用：</p>
+<p> 利用replace()进行替换的时候，</p>
+<ol>
+<li><p>如果传入的是字符串，则只会替换第一个子字符串，要想替换所有的子字符串，则需要传入一个正则表达式，而且要指定全局（g）标志。不影响原来的字符串，也是生成一个新的字符串。</p>
+<pre><code>let text = &apos;cat, hat, bat&apos;;
+let result = text.replace(&apos;at&apos;, &apos;ost&apos;);
+console.log(result);
+//  cost, hat, bat
+result = text.replace(/at/g, &apos;ost&apos;);
+console.log(result);
+//  cost, host, bost
+</code></pre></li>
+<li><p>如果传入的是一个函数。第二个参数为函数时函数的<strong>返回值</strong>作为替换字符串。那就是说与第二个参数是字符串一样，如果第一个参数是正则表达式，并且全局匹配，则这个函数的方法将被多次调用，每次匹配都会被调用。</p>
+<pre><code>function replacer(match , p1 , p2 , p3 , offset , string){
+    // p1 is nondigits, p2 digits, and p3 non-alphanumerics
+    console.log(`${match}
+                 ${p1}
+                 ${p2}
+                 ${p3}
+                 ${offset}
+                 ${string}`); 
+    /* =&gt; abc12345#$*%
+         abc
+         12345
+         #$*%
+         0
+         abc12345#$*%&quot;    */         
+    console.log([p1, p2, p3].join(&apos; - &apos;)); // =&gt; &quot;abc - 12345 - #$*%&quot;
+    return [p1, p2, p3].join(&apos; - &apos;);
+}
+var newString = &apos;abc12345#$*%&apos;.replace(/([^\d]*)(\d*)([^\w]*)/, replacer); // =&gt;&quot;abc - 12345 - #$*%&quot;
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><h2 id="与数组之间的转换"><a href="#与数组之间的转换" class="headerlink" title="与数组之间的转换"></a>与数组之间的转换</h2></li>
+</ul>
+<ol>
+<li><p>split(str, num)</p>
+<p> 参数：</p>
+<p> <code>str</code>: 用于指定字符串位置切割。</p>
+<p> <code>num</code>：切割后的数组长度。</p>
+<p> 作用：</p>
+<p> 把字符串中包含的某些字符作为分界点切割该字符串组成数组。</p>
+<pre><code>let text = &apos;cat, hat, bat&apos;;
+text.split(&apos;,&apos;);
+//  [&quot;cat&quot;, &quot; hat&quot;, &quot; bat&quot;]
+text.split(&apos;,&apos;, 2);
+//  [&quot;cat&quot;, &quot; hat&quot;]
+text.split(/[^\,]+/);
+//  [&quot;&quot;, &quot;,&quot;, &quot;,&quot;, &quot;&quot;]
+</code></pre></li>
+</ol>
+<ul>
+<li><h2 id="比较两个字符串"><a href="#比较两个字符串" class="headerlink" title="比较两个字符串"></a>比较两个字符串</h2></li>
+</ul>
+<ol>
+<li><p>localeCompare(str)</p>
+<p> 参数： </p>
+<p> <code>str</code>：要比较的字符串。</p>
+<p> 作用：</p>
+<p> 从第一个位置开始,按字母表比较，被比较的字符串只要每一位都在 str 参数的每一位之前，则返回 <code>-1</code>，反之返回 <code>1</code>, 如果相等则返回 <code>0</code>。</p>
+<pre><code>let str1 = &apos;aaabb&apos;;
+let str2 = &apos;cdac&apos;;
+let str3 = &apos;acac&apos;;
+str1.localeCompare(str2);
+//  -1
+str1.localeCompare(str3);
+//  -1
+str2 = &apos;aaaaa&apos;;
+str1.localeCompare(str2);
+//  1
+str2 = &apos;aaaba&apos;;
+str1.localeCompare(str2);
+//  1
+str2 = &apos;aaabc&apos;;
+str1.localeCompare(str2);
+//  -1
+</code></pre></li>
+</ol>
+<ul>
+<li><h2 id="String-构造字符串"><a href="#String-构造字符串" class="headerlink" title="String 构造字符串"></a>String 构造字符串</h2></li>
+</ul>
+<ol>
+<li><p>fromCharCode(num)</p>
+<p> 参数：</p>
+<p> <code>num</code>: 一个或者多个字符编码。</p>
+<p> 作用：</p>
+<p> 将接收到的一个或多个字符串编码转换成一个字符串，这个方法与实例方法charCodeAt()执行相反的操作。</p>
+<pre><code>let str = &apos;Ace&apos;;
+str.charCodeAt(0);
+//  65
+String.fromCharCode(65);
+//  &quot;A&quot;
+</code></pre></li>
+</ol>
+<hr>
+<p><img src="https://image-static.segmentfault.com/629/456/629456743-57a401904d0d1" alt="总结图"></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
