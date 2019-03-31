@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Charles Chen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="DNS 如何配置">
+  <meta property="og:title" content="Reg 正则表达式简单总结">
   <meta property="og:description" content="Charles Chen 的个人网站，记录编程（Javascript / Python / PHP），健身，机车等分享记录。">
   <meta property="og:site_name" content="Charles Chen">
   <meta property="og:type" content="article">
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">DNS 如何配置</p>
+          <p class="title">Reg 正则表达式简单总结</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -99,112 +99,17 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2019-02-13</span>
+            <span class="date">2019-03-31</span>
             <span class="time">23:23:37</span>
           </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
-
-<a href="/categories/Computer-System/">Computer System</a>
-</span>
           
         </div>
         <!-- Tags -->
         
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/Network/">#Network</a> <a class="tag" href="/tags/Computer/">#Computer</a>
-
-
-          </div>
-        
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>如何设置 DNS。<br><a id="more"></a></p>
-<h1 id="为什么要手动设置-DNS"><a href="#为什么要手动设置-DNS" class="headerlink" title="为什么要手动设置 DNS ?"></a>为什么要手动设置 DNS ?</h1><p>一般来说，你选择的宽带运营商会提供一个 DNS 服务器给你，大部分情况下都会给你分配最近的服务器，但是也会出现一些问题比如：</p>
-<ol>
-<li>访问某些网站会很慢，例如 Apple icloud，有的时候甚至所有网站都打不开了。</li>
-<li>如果你输入网址错误，自动设置 DNS 会给你打开一个都是广告的网站。（运营商的额外收入）</li>
-<li>安全问题，设置官方的 DNS 能保证你安全地访问网站。</li>
-</ol>
-<h1 id="有哪些-DNS-可以选择？"><a href="#有哪些-DNS-可以选择？" class="headerlink" title="有哪些 DNS 可以选择？"></a>有哪些 DNS 可以选择？</h1><blockquote>
-<p>国外 DNS</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>隶属</th>
-<th>DNS(主要)</th>
-<th>DNS(备用)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Google</td>
-<td>8.8.8.8</td>
-<td>8.8.4.4</td>
-</tr>
-<tr>
-<td>IBM</td>
-<td>9.9.9.9</td>
-<td>无</td>
-</tr>
-<tr>
-<td>OpenDNS</td>
-<td>208.67.222.222</td>
-<td>208.67.220.220</td>
-</tr>
-<tr>
-<td>诺顿</td>
-<td>199.85.126.10</td>
-<td>199.85.127.10</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>国内 DNS</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>隶属</th>
-<th>DNS(主要)</th>
-<th>DNS(备用)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Goverment</td>
-<td>114.114.114.114</td>
-<td>114.114.115.115</td>
-</tr>
-<tr>
-<td>阿里巴巴</td>
-<td>223.5.5.5</td>
-<td>223.6.6.6</td>
-</tr>
-<tr>
-<td>腾讯</td>
-<td>119.29.29.29</td>
-<td>182.254.116.116</td>
-</tr>
-<tr>
-<td>百度</td>
-<td>180.76.76.76</td>
-<td>无</td>
-</tr>
-</tbody>
-</table>
-<h1 id="应该怎么设置最优-DNS-组合？"><a href="#应该怎么设置最优-DNS-组合？" class="headerlink" title="应该怎么设置最优 DNS 组合？"></a>应该怎么设置最优 DNS 组合？</h1><blockquote>
-<p>设置 DNS 方法参考(<a href="https://jingyan.baidu.com/article/27fa7326b8c6da46f8271f01.html" target="_blank" rel="noopener">链接</a>)</p>
-</blockquote>
-<p>对于国内使用，我的建议是<strong>首选 DNS 服务器</strong>设置为国内的 <strong>114.114.114.114</strong>， <strong>备用 DNS 服务器</strong>设置为 Google 的 <strong>8.8.8.8</strong>。</p>
-<p>这样当你在访问一些国外的网站的时候，如果首选 DNS 服务器解析很慢，会自动用备用 DNS 服务器进行快速解析，一般来说 Google 的够用了。</p>
-<p>最终如图：</p>
-<p><img src="https://note.youdao.com/yws/public/resource/5609e29d4d99fa089f47750a8f079eec/xmlnote/853EDB933ED241138414FFF18253BABD/6239" alt="DNS 设置图加载"></p>
-<h1 id="还是不会设置怎么办？"><a href="#还是不会设置怎么办？" class="headerlink" title="还是不会设置怎么办？"></a>还是不会设置怎么办？</h1><p>小老弟，你还是用这个软件吧。(<a href="https://www.sordum.org/7952/dns-jumper-v2-1/" target="_blank" rel="noopener">下载链接</a>)</p>
+          <p>项目开发中遇到了很多次需要使用正则来清洗数据的情况了，每次都是要去网上搜，其实需求不复杂，趁着有时间学习一下搞明白。<br><a id="more"></a>   </p>
+<p>##</p>
 
         </div>
       </div>
